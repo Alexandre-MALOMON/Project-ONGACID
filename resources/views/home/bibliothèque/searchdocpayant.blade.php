@@ -1,23 +1,22 @@
 @extends('partials.website.app')
 @section('website_content')
 <div class="banner">
-    <h1>{{ GoogleTranslate::trans("Bibliothèque", app()->getLocale()) }}</h1>
+    <h1>Bibliothèque</h1>
 </div>
 
 <section class="container_bibli_gratuite">
-    <h2>{{ GoogleTranslate::trans("Rechercher un document", app()->getLocale()) }}
-        <h2>
+    <h2>Rechercher un document</h2>
             <form class="form_gratuite" method="get" action="{{ route('searchDocumentPayant')}}">
                 <div class="container_input_gratuite">
                     <select name="categorie_id" id="">
-                        <option value="">{{ GoogleTranslate::trans("Tous les documents", app()->getLocale()) }}</option>
+                        <option value="">Tous les documents</option>
                         @foreach ($categories as $categorie)
-                        <option value="{{$categorie->id}}">{{ GoogleTranslate::trans($categorie->name, app()->getLocale()) }}</option>
+                        <option value="{{$categorie->id}}">{{ $categorie->name }}</option>
                         @endforeach
                     </select>
-                    <input type="text" name="title" placeholder="{{ GoogleTranslate::trans('le titre du document', app()->getLocale()) }}">
+                    <input type="text" name="title" placeholder="le titre du document">
                 </div>
-                <button>{{ GoogleTranslate::trans("Rechercher", app()->getLocale()) }}</button>
+                <button>Rechercher</button>
             </form>
 </section>
 
@@ -28,14 +27,14 @@
     <div class="document">
         <img src="{{ $bibliotheque->photo}}" alt="">
         <div class="document_text">
-            <h2>{{ GoogleTranslate::trans($bibliotheque->title, app()->getLocale()) }}</h2>
+            <h2>{{ $bibliotheque->title }}</h2>
             <h3>{{ $bibliotheque->auteur}}</h3>
-            <p>{{ GoogleTranslate::trans(substr($bibliotheque->description,0,200), app()->getLocale()) }}...
+            <p>{{ substr($bibliotheque->description,0,200) }}...
             </p>
 
             <div class="container_button_text">
                 <div class="link">
-                    <a target="_blank" href="{{ $bibliotheque->lien}}">{{ GoogleTranslate::trans("ACHETER", app()->getLocale()) }}</a>
+                    <a target="_blank" href="{{ $bibliotheque->lien}}">ACHETER</a>
                 </div>
 
                 <!--  <div class="text">
@@ -66,7 +65,7 @@
     </div>
     @endforeach
     @else
-    <p style="text-align: center;">{{ GoogleTranslate::trans("Aucun résultat de recherche", app()->getLocale()) }}</p>
+    <p style="text-align: center;">Aucun résultat de recherche</p>
 
     @endif
     <p>{{$bibliotheques->links()}}</p>

@@ -7,18 +7,18 @@ use Carbon\Carbon;
 setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
 ?>
 <div class="banner">
-    <h1>{{ GoogleTranslate::trans("NOTRE AGENDA", app()->getLocale()) }}</h1>
+    <h1>NOTRE AGENDA</h1>
 </div>
 
 <section class="container_bibli_gratuite">
-    <h2>{{ GoogleTranslate::trans("Rechercher une formation", app()->getLocale()) }}<h2>
+    <h2>Rechercher une formation<h2>
             <form class="form_gratuite" method="get" action="{{ route('agendaSearch')}}">
                 @csrf
                 <div class="container_input_gratuite">
 
-                    <input type="text" name="title" placeholder="{{ GoogleTranslate::trans('Title de la formation', app()->getLocale()) }}">
+                    <input type="text" name="title" placeholder="Title de la formation">
                 </div>
-                <button>{{ GoogleTranslate::trans("Rechercher", app()->getLocale()) }}</button>
+                <button>Rechercher</button>
             </form>
 </section>
 
@@ -29,10 +29,10 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
         <img src="{{ $agenda->photo }}" alt="">
         <div class="agenda_cards_text">
             <div class="agenda_text">
-                <h3>{{ GoogleTranslate::trans(Carbon::parse($agenda->debut)->Format('d F Y') . ' au', app()->getLocale()) }}  {{ GoogleTranslate::trans(Carbon::parse($agenda->fin)->Format('d F Y'), app()->getLocale()) }}</h3>
-                <h2>{{ GoogleTranslate::trans($agenda->title, app()->getLocale()) }}
+                <h3>{{ Carbon::parse($agenda->debut)->Format('d F Y') . ' au' }}  {{ Carbon::parse($agenda->fin)->Format('d F Y') }}</h3>
+                <h2>{{ $agenda->title }}
                     <h2>
-                        <p>{!! GoogleTranslate::trans(substr($agenda->description,0,200), app()->getLocale()) !!}...
+                        <p>{!! substr($agenda->description,0,200) !!}...
                         <p>
             </div>
             <div class="agenda_horaire">
@@ -42,14 +42,14 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
                 <p>
             </div>
             <div class="link_agenda">
-                <a href="{{ route('descriptionagenda',$agenda->slug)}}">{{ GoogleTranslate::trans("Savoir plus", app()->getLocale()) }}</a>
+                <a href="{{ route('descriptionagenda',$agenda->slug)}}">Savoir plus</a>
             </div>
         </div>
     </div>
     @endforeach
 
     @else
-    <p style="text-align: center;">{{ GoogleTranslate::trans("Aucun résultats de recherche", app()->getLocale()) }}</p>
+    <p style="text-align: center;">Aucun résultats de recherche</p>
     @endif
     <p style="text-align: center;">{{$agendas->links()}}</p>
 

@@ -14,7 +14,7 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
     <div class="container_tarifs">
         <div class="tarifs">
             <div class="tarifs_text">
-                <h3>{{ GoogleTranslate::trans(Carbon::parse($agenda->debut)->Format('d F Y') . ' au' , app()->getLocale())}} {{ GoogleTranslate::trans(Carbon::parse($agenda->fin)->Format('d F Y'), app()->getLocale()) }}</h3>
+                <h3>{{ Carbon::parse($agenda->debut)->Format('d F Y') . ' au' }} {{ Carbon::parse($agenda->fin)->Format('d F Y') }}</h3>
                 <h2>{{ GoogleTranslate::trans($agenda->title, app()->getLocale()) }}
                     <h2>
             </div>
@@ -25,7 +25,7 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
                 <p>
             </div>
             <div class="link_desc">
-                <a href="{{route('formagenda',$agenda->slug)}}">{{GoogleTranslate::trans( "S'inscrire", app()->getLocale())}}</a>
+                <a href="{{route('formagenda',$agenda->slug)}}">S'inscrire</a>
             </div>
         </div>
 
@@ -34,10 +34,10 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
 
     <div class="desc_agenda">
         <div class="desc_text">
-            <h2>{{GoogleTranslate::trans( $agenda->title , app()->getLocale())}}
+            <h2>{{ $agenda->title }}
             </h2>
             <p>
-                {!! GoogleTranslate::trans($agenda->description , app()->getLocale())!!}
+                {!! $agenda->description !!}
 
             </p>
         </div>

@@ -2,16 +2,16 @@
 @section('website_content')
 <section class="section_formation">
     <div class="formation_banner">
-        <h1>{{ GoogleTranslate::trans("Nos cours", app()->getLocale()) }}</h1>
+        <h1>Nos cours</h1>
         <form method="post" action="{{ route('seachCours')}}">
             @csrf
             <select name="categorie" id="">
-                <option value="">{{ GoogleTranslate::trans("Catégorie de cours", app()->getLocale()) }}</option>
+                <option value="">Catégorie de cours</option>
                 @foreach ($categories as $categorie)
-                <option value="{{$categorie->id}}">{{ GoogleTranslate::trans($categorie->name, app()->getLocale()) }}</option>
+                <option value="{{$categorie->id}}">{{ $categorie->name }}</option>
                 @endforeach
             </select>
-            <button>{{ GoogleTranslate::trans("Rechercher", app()->getLocale()) }}</button>
+            <button>Rechercher</button>
 
         </form>
     </div>
@@ -21,23 +21,22 @@
             @foreach ($courses as $course)
             <div class="formation_cards_element">
                 <img src="{{$course->photo }}" alt="" class="">
-                <h2>{{ GoogleTranslate::trans($course->title_cours, app()->getLocale()) }}</h2>
+                <h2>{{ $course->title_cours }}</h2>
                 <div class="cour_info">
                     <div class="cour_items">
                         <span><i class="fa-regular fa-clock"></i></span>
-                        <h5>{{$course->heure}} {{ GoogleTranslate::trans("heures", app()->getLocale()) }}</h5>
+                        <h5>{{$course->heure}} heures</h5>
                     </div>
                     <div class="cour_items">
                         <span><i class="fa-solid fa-award"></i></span>
-                        <h5>{{ GoogleTranslate::trans("Certificat
-                        ", app()->getLocale()) }}</h5>
+                        <h5>Certificat</h5>
                     </div>
                 </div>
-                <a href="{{ route('courses.show',$course->slug)}}">{{ GoogleTranslate::trans("Voir plus", app()->getLocale()) }}</a>
+                <a href="{{ route('courses.show',$course->slug)}}">Voir plus</a>
             </div>
             @endforeach
             @else
-            <p style="text-align: center;">{{ GoogleTranslate::trans("Aucun résultat de recherche", app()->getLocale()) }}</p>
+            <p style="text-align: center;">Aucun résultat de recherche</p>
             @endif
             <p style="text-align: center;">{{$courses->links()}}</p>
         </div>

@@ -127,7 +127,7 @@
     </div>
     @else
     <div class="link_login">
-      <a href="{{ route('login')}}">Se connecter</a>
+      <a href="{{ route('login') }}">Se connecter</a>
     </div>
     @endauth
 </nav>

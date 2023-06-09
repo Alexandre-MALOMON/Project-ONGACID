@@ -2,10 +2,10 @@
 @section('website_content')
 
 <div class="cours_banner">
-    <h2> {{ GoogleTranslate::trans($cour->title_cours, app()->getLocale())}}</h2>
+    <h2> {{ $cour->title_cours }}</h2>
     <div class="cours_icone_banner">
         <span><i class="fa-regular fa-clock"></i></span>
-        <p>{{$cour->heure}} {{ GoogleTranslate::trans("heures", app()->getLocale())}}</p>
+        <p>{{$cour->heure}} heures</p>
     </div>
 </div>
 
@@ -16,7 +16,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="?episode={{ $episode->slug }}">
                     <div class="num">{{ $loop->index + 1 }}</div>
-                    {{ GoogleTranslate::trans($episode->title, app()->getLocale())}}
+                    {{ $episode->title }}
                 </a>
             </li>
             @endforeach
@@ -29,19 +29,19 @@
                     <video src="{{ $episode->video }}" controls></video>
                 </div>
                 <div class="tab_text">
-                    {!!GoogleTranslate::trans($episode->description, app()->getLocale())!!}
+                    {!! $episode->description !!}
                 </div>
             </div>
             @endforeach
 
         </div>
         <div class="btn_group">
-            <button class="btn-prev"> {{GoogleTranslate::trans( "Précédent", app()->getLocale())}}</button>
+            <button class="btn-prev">Précédent</button>
             <div>
                 <form action="{{ route('completide',request()->get('episode'))}}" id="form-js" method="post">
                     @csrf
                     <input type="hidden" name="episode" value="{{request()->get('episode')}}">
-                    <button type="submit" class="btn-next">{{ GoogleTranslate::trans("Suivant", app()->getLocale())}}</button>
+                    <button type="submit" class="btn-next">Suivant</button>
                 </form>
             </div>
 

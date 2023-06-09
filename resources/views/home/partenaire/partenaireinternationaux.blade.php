@@ -1,7 +1,7 @@
 @extends('partials.website.app')
 @section('website_content')
 <div class="partenaire_banner">
-         <h1>{{ GoogleTranslate::trans("PARTENAIRES INTERNATIONAUX", app()->getLocale()) }}</h1>
+         <h1>PARTENAIRES INTERNATIONAUX</h1>
 </div>
 
 <div class="container_partenaire">

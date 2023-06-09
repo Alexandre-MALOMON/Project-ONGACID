@@ -90,11 +90,11 @@
                 <span><i class="fa-solid fa-briefcase"></i></pan>
                     <h2>NOTRE SAVOIR-FAIRE</h2>
                     <p>
-                        - Intervenir à différentes échelles : locale, régionale, nationale, internationale<br>
-                        - Développer et intégrer des dispositifs variés avec des solution pratique<br>
-                        - Porter des visions à court, moyen et long terme<br>
-                        - Réunir des intérêts composites autour de problématiques complexes<br>
-                        - Chercher à financer des connaissances nouvelles<br>
+                        Intervenir à différentes échelles : locale, régionale, nationale, internationale<br>
+                        Développer et intégrer des dispositifs variés avec des solution pratique<br>
+                        Porter des visions à court, moyen et long terme<br>
+                        Réunir des intérêts composites autour de problématiques complexes<br>
+                        Chercher à financer des connaissances nouvelles<br>
                     </p>
             </div>
         </div>
@@ -103,9 +103,9 @@
                 <span><i class="fa-solid fa-handshake-simple"></i></pan>
                     <h2>NOS VALEURS</h2>
                     <p>
-                        - Anticipation<br>
-                        - Neutralité<br>
-                        - Sens du travail collectif<br>
+                        Anticipation<br>
+                        Neutralité<br>
+                        Sens du travail collectif<br>
                     </p>
             </div>
         </div>
@@ -114,10 +114,10 @@
                 <span><i class="fa-solid fa-hands-holding-circle"></i></pan>
                     <h2>NOS PRINCIPES D'ACTIONS</h2>
                     <p>
-                        - Inspirer<br>
-                        - Accompagner<br>
-                        - Animer<br>
-                        - Suivre et évaluer<br>
+                        Inspirer<br>
+                        Accompagner<br>
+                        Animer<br>
+                        Suivre et évaluer<br>
                     </p>
             </div>
         </div>
@@ -169,24 +169,24 @@
     <div class="contact">
         @if (Session::has('success'))
         <div class="alert alert-success">
-            {{ ( Session::get('success')) }}
+            {{ Session::get('success') }}
         </div>
         @endif
 
-        <h2>{{"Contactez-nous"}}</h2>
+        <h2>Contactez-nous</h2>
         <form method="post" action="{{ route('contact')}}">
             @csrf
             <div class="input_group">
                 <div class="input">
                     <input name="name" type="text" placeholder="{{GoogleTranslate::trans('Nom & prénom', app()->getLocale())}}">
                     @error('name')
-                    <span class="text-danger">{{ ($message) }}</span>
+                    <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="input">
                     <input name="email" type="email" placeholder="{{GoogleTranslate::trans('Email', app()->getLocale())}}">
                     @error('email')
-                    <span class="text-danger">{{ ($message) }}</span>
+                    <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
 

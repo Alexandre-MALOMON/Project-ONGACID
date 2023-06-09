@@ -7,24 +7,23 @@ use Carbon\Carbon;
 setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
 ?>
 <div class="emploi_banner">
-    <h1>{{ GoogleTranslate::trans('TOUTES NOS OFFRES DISPONIBLES', app()->getLocale()) }}</h1>
+    <h1>TOUTES NOS OFFRES DISPONIBLES</h1>
 
     <div class="emploi_form">
-        <h2>{{ GoogleTranslate::trans("Rechercher une offre d'emploi", app()->getLocale()) }}
-            <h2>
+        <h2>Rechercher une offre d'emploi</h2>
                 <form>
                     <div class="emploi_input">
                         <div class="emploi_champ">
-                            <input type="text" name="" placeholder="{{ GoogleTranslate::trans('Tapez des mots clés...', app()->getLocale()) }}">
+                            <input type="text" name="" placeholder="Tapez des mots clés...">
                         </div>
                         <div class="emploi_champ">
-                            <input type="text" name="" placeholder="{{ GoogleTranslate::trans('Pays', app()->getLocale()) }}">
+                            <input type="text" name="" placeholder="Pays">
                         </div>
                         <div class="emploi_champ">
-                            <input type="text" name="" placeholder="{{ GoogleTranslate::trans('Domaine d\'activité', app()->getLocale()) }}">
+                            <input type="text" name="" placeholder="Domaine d'activité">
                         </div>
                     </div>
-                    <button>{{ GoogleTranslate::trans('Rechercher', app()->getLocale()) }}</button>
+                    <button>Rechercher</button>
                 </form>
     </div>
 
@@ -36,10 +35,10 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
     @foreach ($emploies as $emploie)
     <div class="emploi_card">
         <div class="emploi_text">
-            <h3>{{ GoogleTranslate::trans(Carbon::parse($emploie->start)->Format('d F Y') . ' au', app()->getLocale()) }} {{ GoogleTranslate::trans(Carbon::parse($emploie->end)->Format('d F Y'), app()->getLocale()) }}</h3>
-            <h2>{{ GoogleTranslate::trans($emploie->name, app()->getLocale()) }}
+            <h3>{{ Carbon::parse($emploie->start)->Format('d F Y') . ' au' }} {{ Carbon::parse($emploie->end)->Format('d F Y') }}</h3>
+            <h2>{{ $emploie->name }}
                 <h2>
-                    <p>{!! GoogleTranslate::trans(substr($emploie->description,0,200), app()->getLocale()) !!}...
+                    <p>{!! substr($emploie->description,0,200) !!}...
                     <p>
         </div>
 
@@ -49,7 +48,7 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
                 <p>Temps partiel</p>
             </div>
             <div class="emploi_info_partage">
-                <p>{{ GoogleTranslate::trans('Partager sur', app()->getLocale()) }}</p>
+                <p>Partager sur</p>
                 <p>
                     @php
                         $link = route('descriptionoffre',$emploie->name);
@@ -72,16 +71,16 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
         </div>
         <div class="emploi_action">
             <div class="action_1">
-                <a href="{{ route('descriptionoffre',$emploie->slug)}}">{{ GoogleTranslate::trans('TOUT LIRE', app()->getLocale()) }}</a>
+                <a href="{{ route('descriptionoffre',$emploie->slug)}}">TOUT LIRE</a>
             </div>
             <div class="action_2">
-                <a href="{{ route('formdemploi',$emploie->slug)}}">{{ GoogleTranslate::trans('POSTULER', app()->getLocale()) }}</a>
+                <a href="{{ route('formdemploi',$emploie->slug)}}">POSTULER</a>
             </div>
         </div>
     </div>
     @endforeach
     @else
-    <p style="text-align: center;">{{ GoogleTranslate::trans("Aucune offre d'emploie", app()->getLocale()) }}</p>
+    <p style="text-align: center;">Aucune offre d'emploie</p>
     @endif
     <p style="text-align: center;">{{$emploies->links()}}</p>
 </section>

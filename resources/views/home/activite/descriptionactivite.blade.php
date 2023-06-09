@@ -35,8 +35,8 @@
     <section class="container_description_activite">
         <div class="description_activite">
 
-            <h2> {{ GoogleTranslate::trans("$activite->title", app()->getLocale()) }}</h2>
-            <p> {!! GoogleTranslate::trans("$activite->description", app()->getLocale()) !!}
+            <h2> {{ $activite->title }}</h2>
+            <p> {!! $activite->description !!}
 
             </p>
         </div>

@@ -43,7 +43,7 @@
             <div class="form_contact_input">
                 <input name="email" type="email" placeholder="{{GoogleTranslate::trans('Email', app()->getLocale())}}"><br>
                 @error('email')
-                <span class="text-danger">{{ ($message) }}</span>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
                 <button>Envoyer</button>
             </div>
