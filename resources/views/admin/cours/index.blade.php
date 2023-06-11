@@ -5,7 +5,7 @@
 @if (Session::has('success'))
 <div class="alert alert-success">
 
-    {{ GoogleTranslate::trans(Session::get('success'), app()->getLocale()) }}
+    {{Session::get('success') }}
 </div>
 @endif
 
@@ -16,8 +16,8 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div style="display: flex;justify-content:space-between;">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Cours", app()->getLocale()) }}</h6>
-                <a class="btn btn-primary" href="{{ route('cours.create')}}">{{ GoogleTranslate::trans("Nouveau Cours", app()->getLocale()) }}</a>
+                <h6 class="m-0 font-weight-bold text-primary">Cours</h6>
+                <a class="btn btn-primary" href="{{ route('cours.create')}}">Nouveau Cours</a>
 
             </div>
         </div>
@@ -35,17 +35,17 @@
                                 {{ $loop->index + 1}}
                             </span>
                             <div class="section__item-top-left-periode">
-                                <span>{{ GoogleTranslate::trans("$cour->title_cours", app()->getLocale()) }}</span>
+                                <span>$cour->title_cours</span>
 
                             </div>
 
                         </div>
                         <div class="section__item-top-right">
                             <a class="section__item-top-right-btn bg-secondary" href="{{route('achatLivre',$cour->slug)}}" title="Total inscrit">
-                                {{ GoogleTranslate::trans("Vente", app()->getLocale()) }}
+                                Vente
                             </a>
                             <span class="section__item-top-right-btn bg-warning" href="#" title="Total inscrit">
-                                {{ $cour->episodes->count()}} {{ GoogleTranslate::trans("Épisodes", app()->getLocale()) }}
+                                {{ $cour->episodes->count()}} Épisodes
                             </span>
                             <a class="section__item-top-right-btn btn bl" title="Modifier la section" href="{{ route('cours.edit',$cour->id)}}">
                                 <span class="fa fa-pencil"></span>
@@ -67,9 +67,9 @@
                             <thead>
                                 <tr>
                                     <th>N°</th>
-                                    <th>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Vidéo", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Action", app()->getLocale()) }}</th>
+                                    <th>Titre</th>
+                                    <th>Vidéo</th>
+                                    <th>Action</th>
 
                                 </tr>
                             </thead>
@@ -79,7 +79,7 @@
                                 @foreach ($cour->episodes as $episode)
                                 <tr>
                                     <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ GoogleTranslate::trans($episode->title, app()->getLocale()) }}</td>
+                                    <td>{{ $episode->title }}</td>
                                     <td> <video src="{{ $episode->video}}" controls></video> </td>
                                     <td>
                                         <div class="section__item-top-right">
@@ -102,7 +102,7 @@
                                 @include('admin.episode.delete')
                                 @endforeach
                                 @else
-                                <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucune épisode", app()->getLocale()) }}</td>
+                                <td colspan="13" style="text-align: center;">Aucune épisode</td>
                                 @endif
 
                             <tbody>

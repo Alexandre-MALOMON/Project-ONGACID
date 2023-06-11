@@ -4,7 +4,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-    {{ GoogleTranslate::trans(Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success') }}
 </div>
 @endif
 
@@ -13,7 +13,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div style="display: flex;justify-content:space-between;">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Agenda de formation", app()->getLocale()) }}</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Agenda de formation</h6>
 
 
             </div>
@@ -28,15 +28,15 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("Type", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Début", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Fin", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Lieu", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Heure", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Prix", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Lien de la formation", app()->getLocale()) }}</th>
-                            <th width="280px">{{ GoogleTranslate::trans("Action", app()->getLocale()) }}</th>
+                            <th>Type</th>
+                            <th>Titre</th>
+                            <th>Début</th>
+                            <th>Fin</th>
+                            <th>Lieu</th>
+                            <th>Heure</th>
+                            <th>Prix</th>
+                            <th>Lien de la formation</th>
+                            <th width="280px">Action</th>
                         </tr>
                     </thead>
                     <tbody id="participants">
@@ -44,11 +44,11 @@
                         @foreach ($formations as $formation)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ GoogleTranslate::trans($formation->type ==1 ? 'Payante' : 'Gratuite', app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($formation->title, app()->getLocale()) }}</td>
+                            <td>{{ $formation->type ==1 ? 'Payante' : 'Gratuite' }}</td>
+                            <td>{{ $formation->title }}</td>
                             <td>{{ date('d/m/Y',strtotime($formation->debut))}}</td>
                             <td>{{ date('d/m/Y',strtotime($formation->fin))}}</td>
-                            <td>{{ GoogleTranslate::trans($formation->lieu, app()->getLocale()) }}</td>
+                            <td>{{ $formation->lieu }}</td>
                             <td>{{ $formation->heure }}</td>
                             <td>{{$formation->prix }}</td>
                             <td>
@@ -75,7 +75,7 @@
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucune formation programmée", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">Aucune formation programmée</td>
                         @endif
 
                     <tbody>

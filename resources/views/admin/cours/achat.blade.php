@@ -4,7 +4,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-    {{ GoogleTranslate::trans(Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success') }}
 </div>
 @endif
 
@@ -15,7 +15,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div style="display: flex;justify-content:space-between;">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Achat du " . $cour->title, app()->getLocale()) }}</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ "Achat du " . $cour->title }}</h6>
                 <p class="m-0 font-weight-bold text-primary">TOTAL : {{$achats->sum('montant')}} FCFA</p>
 
             </div>
@@ -30,10 +30,10 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("Transaction ID", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Prénom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Date d'achat", app()->getLocale()) }}</th>
+                            <th>Transaction ID</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Date d'achat</th>
                         </tr>
                     </thead>
                     <tbody id="participants">
@@ -41,16 +41,16 @@
                         @foreach ($achats as $achat)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ GoogleTranslate::trans($achat->transaction_id, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($achat->user->lastname, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($achat->user->firstname, app()->getLocale()) }}</td>
+                            <td>{{ $achat->transaction_id }}</td>
+                            <td>{{ $achat->user->lastname }}</td>
+                            <td>{{ $achat->user->firstname }}</td>
                             <td>{{ date('d-m-Y',strtotime($achat->created_at))}}</td>
 
 
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucun livre dans la bibliothèque", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">Aucun livre dans la bibliothèque</td>
                         @endif
 
                     <tbody>

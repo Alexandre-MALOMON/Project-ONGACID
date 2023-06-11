@@ -5,9 +5,9 @@
         <i class="fa fa-bars"></i>
     </button>
     <select class="form-select col-md-3 changeLang">
-        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>{{ GoogleTranslate::trans('Anglais', app()->getLocale()) }}</option>
-        <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>{{ GoogleTranslate::trans('Français', app()->getLocale()) }}</option>
-        <option value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>{{ GoogleTranslate::trans('Arabe', app()->getLocale()) }}</option>
+        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>Anglais</option>
+        <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>Français</option>
+        <option value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>Arabe</option>
     </select>
     <ul class="navbar-nav ml-auto">
 
@@ -21,7 +21,7 @@
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    {{ GoogleTranslate::trans('Déconnexion', app()->getLocale()) }}
+                    Déconnexion
                 </a>
             </div>
         </li>
@@ -31,20 +31,20 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{ GoogleTranslate::trans('Déconnexion', app()->getLocale()) }}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Déconnexion</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body"> {{ GoogleTranslate::trans('Voulez-vous déconnecter ?', app()->getLocale()) }}</div>
+                <div class="modal-body"> Voulez-vous déconnecter ?</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">{{ GoogleTranslate::trans('Annuler', app()->getLocale()) }}</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler</button>
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                            <button class="btn btn-danger"> {{ GoogleTranslate::trans('Déconnexion', app()->getLocale()) }}</button>
+                            <button class="btn btn-danger"> Déconnexion</button>
                         </x-responsive-nav-link>
                     </form>
 

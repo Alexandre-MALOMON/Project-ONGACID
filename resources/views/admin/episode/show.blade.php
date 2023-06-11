@@ -6,15 +6,15 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Détaille du episodes", app()->getLocale()) }} </h2>
+                    <h2>Détaille du episodes </h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($episode->title, app()->getLocale()) }}
+                    <strong>Titre:</strong>
+                    {{ $episode->title }}
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Video", app()->getLocale()) }}:</strong>
+                    <strong>Video:</strong>
                     <td> <video src="{{ $episode->video}}" autoplay controls></video> </td>
                 </div>
             </div>
@@ -30,8 +30,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Desciption", app()->getLocale()) }}:</strong>
-                    {!! GoogleTranslate::trans($episode->description, app()->getLocale()) !!}
+                    <strong>Desciption:</strong>
+                    {!! $episode->description !!}
                 </div>
             </div>
         </div>

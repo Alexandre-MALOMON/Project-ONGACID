@@ -6,30 +6,30 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Détaille de l'alerte", app()->getLocale()) }} </h2>
+                    <h2>Détaille de l'alerte </h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($alerte->nom, app()->getLocale()) }}
+                    <strong>Nom:</strong>
+                    {{ $alerte->nom }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Prénom", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($alerte->prenom , app()->getLocale()) }}
+                    <strong>Prénom:</strong>
+                    {{ $alerte->prenom  }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}:</strong>
+                    <strong>E-mail:</strong>
                     {{$alerte->email}}
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Contact", app()->getLocale()) }}:</strong>
+                    <strong>Contact:</strong>
                     {{ $alerte->email}}
                 </div>
             </div>
@@ -45,8 +45,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Alerte", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($alerte->message, app()->getLocale()) }}
+                    <strong>Alerte:</strong>
+                    {{ $alerte->message }}
                 </div>
             </div>
         </div>

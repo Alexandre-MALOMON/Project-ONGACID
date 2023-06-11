@@ -4,7 +4,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-    {{ GoogleTranslate::trans( Session::get('success') , app()->getLocale()) }}
+    {{  Session::get('success')  }}
 </div>
 @endif
 
@@ -15,7 +15,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div style="display: flex;justify-content:space-between;">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Activités", app()->getLocale()) }}</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Activités</h6>
 
 
             </div>
@@ -30,11 +30,11 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("Catégorie", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Photo", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Lieu", app()->getLocale()) }}</th>
-                            <th width="280px">{{ GoogleTranslate::trans("Action", app()->getLocale()) }}</th>
+                            <th>Catégorie</th>
+                            <th>Titre</th>
+                            <th>Photo</th>
+                            <th>Lieu</th>
+                            <th width="280px">Action</th>
                         </tr>
                     </thead>
                     <tbody id="participants">
@@ -42,8 +42,8 @@
                         @foreach ($activitys as $activity)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ GoogleTranslate::trans($activity->activiteCat->name, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($activity->title, app()->getLocale()) }}</td>
+                            <td>{{$activity->activiteCat->name }}</td>
+                            <td>{{$activity->title }}</td>
                             <td>@php
                                 $decodes = json_decode($activity->photo)
 
@@ -52,7 +52,7 @@
                                 <img src="{{ $de}}" alt="" height="60" width="50">
                                 @endforeach
                             </td>
-                            <td>{{ GoogleTranslate::trans($activity->lieu, app()->getLocale()) }}</td>
+                            <td>{{$activity->lieu }}</td>
                             <td>
 
                                 <a class="btn btn-success" title="Voir plus" href="{{ route('activity.show',$activity->id)}}"><i class="fa fa-eye"></i></a>
@@ -69,7 +69,7 @@
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucune activité enrégistrée", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">Aucune activité enrégistrée</td>
                         @endif
 
                     <tbody>

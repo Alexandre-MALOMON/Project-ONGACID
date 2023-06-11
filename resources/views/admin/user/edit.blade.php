@@ -15,11 +15,11 @@
        @else
        <input type="hidden" name="status" value="1" id="">
        @endif
-       <p>{{ GoogleTranslate::trans("Voulez-vous" . $user->status ==1 ? " Bloquer" :  " Débloquer", app()->getLocale()) }}<b>{{$user->lastname}} {{$user->firstname}}</b></p>
+       <p>{{ "Voulez-vous" . $user->status ==1 ? " Bloquer" :  " Débloquer" }}<b>{{$user->lastname}} {{$user->firstname}}</b></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ GoogleTranslate::trans("Annuler", app()->getLocale()) }}</button>
-        <button type="submit" class="btn btn-primary">{{ GoogleTranslate::trans("Confirmer", app()->getLocale()) }}</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="submit" class="btn btn-primary">Confirmer</button>
       </div>
     </div>
   </div>

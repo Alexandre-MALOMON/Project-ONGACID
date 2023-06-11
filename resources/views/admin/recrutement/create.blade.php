@@ -5,43 +5,43 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{ GoogleTranslate::trans("Nouveau recrutement", app()->getLocale()) }}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Nouveau recrutement</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="nom" class="text-gray-800">{{ GoogleTranslate::trans("Intitulé du recrutement", app()->getLocale()) }}</label>
+                        <label for="nom" class="text-gray-800">Intitulé du recrutement</label>
                         <input type="text" class="form-control" name="name" id="inputEmail4" >
                         @error('name')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="nom" class="text-gray-800">{{ GoogleTranslate::trans("Début du récrutement", app()->getLocale()) }}</label>
+                        <label for="nom" class="text-gray-800">Début du récrutement</label>
                         <input type="date" class="form-control" name="start" id="inputEmail4" >
                         @error('start')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="nom" class="text-gray-800">{{ GoogleTranslate::trans("Fin du récrutement", app()->getLocale()) }}</label>
+                        <label for="nom" class="text-gray-800">Fin du récrutement</label>
                         <input type="date" class="form-control" name="end" id="inputEmail4" >
                         @error('end')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="motivation" class="text-gray-800">{{ GoogleTranslate::trans("Description(optionnel)", app()->getLocale()) }}</label>
+                        <label for="motivation" class="text-gray-800">Description(optionnel)</label>
                         <textarea class="form-control" id="summernote" name="description" cols="30" rows="10"></textarea>
                         @error('description')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <input type="hidden" name="type" value="1">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ GoogleTranslate::trans("Annuler", app()->getLocale()) }}</button>
-                    <button type="submit" class="btn btn-primary">{{ GoogleTranslate::trans("Confirmer", app()->getLocale()) }}</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Confirmer</button>
                 </div>
             </div>
         </div>

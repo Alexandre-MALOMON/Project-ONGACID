@@ -8,61 +8,61 @@
             <div id="survey_options">
                 <div>
                     <div class="form-group">
-                        <label for="prenom" class="text-gray-800">{{ GoogleTranslate::trans("Titre du cours", app()->getLocale()) }}</label>
+                        <label for="prenom" class="text-gray-800">Titre du cours</label>
                         <input type="text" class="form-control" name="title_cours" id="inputPassword4">
                         @error('title_cours')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="prenom" class="text-gray-800">{{ GoogleTranslate::trans("Phot illustrative du cours", app()->getLocale()) }}</label>
+                        <label for="prenom" class="text-gray-800">Phot illustrative du cours</label>
                         <input type="file" class="form-control" name="photo" id="inputPassword4">
                         @error('photo')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="prenom" class="text-gray-800">{{ GoogleTranslate::trans("Nombre d'heure", app()->getLocale()) }}</label>
+                        <label for="prenom" class="text-gray-800">Nombre d'heure</label>
                         <input type="number" class="form-control" name="heure" id="inputPassword4">
                         @error('heure')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
                     <div class="form_group">
-                        <label for="sexe" class="text-gray-800">{{ GoogleTranslate::trans('La catégorie du cours', app()->getLocale()) }}</label>
+                        <label for="sexe" class="text-gray-800">La catégorie du cours</label>
                         <select id="inputState" class="form-control" name="courCategory_id">
-                            <option value=""> {{ GoogleTranslate::trans('Veuillez choisir une catégorie', app()->getLocale()) }}</option>
+                            <option value=""> Veuillez choisir une catégorie</option>
                             @foreach ($categoryCourses as $categorie)
-                            <option value="{{$categorie->id}}"> {{ GoogleTranslate::trans($categorie->name, app()->getLocale()) }}</option>
+                            <option value="{{$categorie->id}}"> {{$categorie->name }}</option>
                             @endforeach
                         </select>
                         @error('courCategory_id')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
                     <div class="form_group">
-                        <label for="type" class="text-gray-800">{{ GoogleTranslate::trans('Type de cours', app()->getLocale()) }}</label>
+                        <label for="type" class="text-gray-800">Type de cours</label>
                         <select id="inputState" class="form-control" name="type">
-                            <option value=""> {{ GoogleTranslate::trans('Veuillez choisir le type de cours', app()->getLocale()) }}</option>
-                            <option value="1"> {{ GoogleTranslate::trans('Payant', app()->getLocale()) }}</option>
-                            <option value="2"> {{ GoogleTranslate::trans('Gratuit', app()->getLocale()) }}</option>
+                            <option value=""> Veuillez choisir le type de cours</option>
+                            <option value="1"> Payant</option>
+                            <option value="2"> Gratuit</option>
                         </select>
                         @error('type')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="prenom" class="text-gray-800">{{ GoogleTranslate::trans("Prix du cours", app()->getLocale()) }}</label>
+                        <label for="prenom" class="text-gray-800">Prix du cours</label>
                         <input type="number" class="form-control" name="prix" id="inputPassword4">
                         @error('prix')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="prenom" class="text-gray-800">{{ GoogleTranslate::trans("Description du cours", app()->getLocale()) }}</label>
+                        <label for="prenom" class="text-gray-800">Description du cours</label>
                         <textarea class="form-control" name="description_cours" id="summernote" cols="30" rows="10"></textarea>
                         @error('decription_cours')
-                        <span class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
+                        <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
                 </div>

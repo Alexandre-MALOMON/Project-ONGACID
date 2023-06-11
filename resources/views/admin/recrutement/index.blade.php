@@ -5,7 +5,7 @@
 @if (Session::has('success'))
 <div class="alert alert-success">
 
-    {{ GoogleTranslate::trans(Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success')}}
 </div>
 @endif
 
@@ -16,8 +16,8 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div style="display: flex;justify-content:space-between;">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Recrutement", app()->getLocale()) }}</h6>
-                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate" href="">{{ GoogleTranslate::trans("Nouveau recrutement", app()->getLocale()) }}</a>
+                <h6 class="m-0 font-weight-bold text-primary">Recrutement</h6>
+                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate" href="">Nouveau recrutement</a>
 
             </div>
             @include('admin.recrutement.create')
@@ -77,15 +77,15 @@
                             <thead>
                                 <tr>
                                     <th>N°</th>
-                                    <th>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Prénom", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Contact", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Pays", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Ville", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Cv", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Lettre", app()->getLocale()) }}</th>
-                                    <th>{{ GoogleTranslate::trans("Diplome", app()->getLocale()) }}</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>E-mail</th>
+                                    <th>Contact</th>
+                                    <th>Pays</th>
+                                    <th>Ville</th>
+                                    <th>Cv</th>
+                                    <th>Lettre</th>
+                                    <th>Diplome</th>
 
                                 </tr>
                             </thead>
@@ -95,28 +95,28 @@
                                 @foreach ($recrutement->candidatures as $candidat)
                                 <tr>
                                     <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ GoogleTranslate::trans($candidat->nom, app()->getLocale()) }}</td>
-                                    <td>{{ GoogleTranslate::trans($candidat->prenom, app()->getLocale()) }}</td>
-                                    <td>{{ GoogleTranslate::trans($candidat->email, app()->getLocale()) }}</td>
-                                    <td>{{ GoogleTranslate::trans($candidat->contact, app()->getLocale()) }}</td>
-                                    <td>{{ GoogleTranslate::trans($candidat->pays, app()->getLocale()) }}</td>
-                                    <td>{{ GoogleTranslate::trans($candidat->ville, app()->getLocale()) }}</td>
-                                    <td><a href="{{$candidat->cv}}" target="_blank">{{ GoogleTranslate::trans("Lire", app()->getLocale()) }}</a></td>
-                                    <td><a href="{{$candidat->lettre}}" target="_blank">{{ GoogleTranslate::trans("Lire", app()->getLocale()) }}</a></td>
+                                    <td>{{ $candidat->nom }}</td>
+                                    <td>{{ $candidat->prenom }}</td>
+                                    <td>{{ $candidat->email }}</td>
+                                    <td>{{ $candidat->contact }}</td>
+                                    <td>{{ $candidat->pays }}</td>
+                                    <td>{{ $candidat->ville }}</td>
+                                    <td><a href="{{$candidat->cv}}" target="_blank">Lire</a></td>
+                                    <td><a href="{{$candidat->lettre}}" target="_blank">Lire</a></td>
                                     <td>
                                         @php
                                             $diplomes = json_decode($candidat->diplome)
                                         @endphp
                                         @foreach ($diplomes as $diplome)
 
-                                        <a href="{{$diplome}}" target="_blank">{{ GoogleTranslate::trans("Lire", app()->getLocale()) }}</a>
+                                        <a href="{{$diplome}}" target="_blank">Lire</a>
                                         @endforeach
                                     </td>
 
                                 </tr>
                                 @endforeach
                                 @else
-                                <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucun candidat", app()->getLocale()) }}</td>
+                                <td colspan="13" style="text-align: center;">Aucun candidat</td>
                                 @endif
 
                             <tbody>

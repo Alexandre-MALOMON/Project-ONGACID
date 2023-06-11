@@ -6,38 +6,38 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Détaille du livre", app()->getLocale()) }} <b></b>{{ GoogleTranslate::trans($book->title, app()->getLocale()) }}</h2>
+                    <h2>Détaille du livre <b></b>{{ $book->title }}</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($book->title, app()->getLocale()) }}
+                    <strong>Titre:</strong>
+                    {{ $book->title }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Catégorie", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($book->bookcategory->name, app()->getLocale()) }}
+                    <strong>Catégorie:</strong>
+                    {{ $book->bookcategory->name }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Auteur", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($book->auteur, app()->getLocale()) }}
+                    <strong>Auteur:</strong>
+                    {{ $book->auteur }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Photo", app()->getLocale()) }}:</strong>
+                    <strong>Photo:</strong>
                    <img src="{{$book->photo}}" height="300" width="300" alt="">
                 </div>
             </div>
@@ -45,15 +45,15 @@
         <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>{{ GoogleTranslate::trans("Type", app()->getLocale()) }}:</strong>
-                        {{ GoogleTranslate::trans($book->type ==1 ? "Payant" : "Gratuit", app()->getLocale()) }}
+                        <strong>Type:</strong>
+                        {{ $book->type ==1 ? "Payant" : "Gratuit"}}
                     </div>
                 </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>{{ GoogleTranslate::trans("Téléchargement", app()->getLocale()) }}:</strong>
+                        <strong>Téléchargement:</strong>
                        {{$book->telechargement}}
                     </div>
             </div>
@@ -61,8 +61,8 @@
         <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>{{ GoogleTranslate::trans("Description", app()->getLocale()) }}:</strong>
-                        {!! GoogleTranslate::trans($book->description, app()->getLocale()) !!}
+                        <strong>Description:</strong>
+                        {!! $book->description !!}
                     </div>
                 </div>
         </div>

@@ -6,23 +6,23 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Détaille du cours", app()->getLocale()) }} </h2>
+                    <h2>Détaille du cours </h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($cour->title_cours, app()->getLocale()) }}
+                    <strong>Titre:</strong>
+                    {{ $cour->title_cours }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Desciption", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($cour->description_cours, app()->getLocale()) }}
+                    <strong>Desciption:</strong>
+                    {{ $cour->description_cours }}
                 </div>
             </div>
         </div>

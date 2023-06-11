@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Détaille de l'activité", app()->getLocale()) }}</h2>
+                    <h2>Détaille de l'activité</h2>
                 </div>
             </div>
         </div>
@@ -14,30 +14,30 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Titre:</strong>
-                    {{ GoogleTranslate::trans("$activity->title", app()->getLocale()) }}
+                    {{ $activity->title }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Catégorie", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($activity->activiteCat->name, app()->getLocale()) }}
+                    <strong>Catégorie:</strong>
+                    {{ $activity->activiteCat->name }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Lieu", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($activity->lieu, app()->getLocale()) }}
+                    <strong>Lieu:</strong>
+                    {{ $activity->lieu }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Photo", app()->getLocale()) }}:</strong>
+                    <strong>Photo:</strong>
                     @php
                     $decodes = json_decode($activity->photo)
 
@@ -51,8 +51,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Description", app()->getLocale()) }}:</strong>
-                    {!!GoogleTranslate::trans("$activity->description", app()->getLocale()) !!}
+                    <strong>Description:</strong>
+                    {!!$activity->description !!}
                 </div>
             </div>
         </div>

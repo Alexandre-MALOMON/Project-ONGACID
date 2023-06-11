@@ -4,7 +4,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-{{ GoogleTranslate::trans(Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success') }}
 </div>
 @endif
 
@@ -15,8 +15,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div style="display: flex;justify-content:space-between;">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Utilisateurs", app()->getLocale()) }}</h6>
-
+                <h6 class="m-0 font-weight-bold text-primary">Utilisateurs
 
             </div>
         </div>
@@ -30,13 +29,13 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("Photo", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Prénom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Rôle", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Contact", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}</th>
-                            <th width="280px">{{ GoogleTranslate::trans("Action", app()->getLocale()) }}</th>
+                            <th>Photo</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Rôle</th>
+                            <th>Contact</th>
+                            <th>E-mail</th>
+                            <th width="280px">Action</th>
                         </tr>
                     </thead>
                     <tbody id="participants">
@@ -73,7 +72,7 @@
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucun utilisateur", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">Aucun utilisateur</td>
                         @endif
 
                     <tbody>

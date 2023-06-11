@@ -4,7 +4,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-    {{ GoogleTranslate::trans( Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success') }}
 </div>
 @endif
 
@@ -12,7 +12,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Alerte", app()->getLocale()) }}</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Alerte</h6>
 
         </div>
 
@@ -25,12 +25,12 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Prénom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Contact", app()->getLocale()) }}</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>E-mail</th>
+                            <th>Contact</th>
 
-                            <th width="280px">{{ GoogleTranslate::trans("Action", app()->getLocale()) }}</th>
+                            <th width="280px">Action</th>
                         </tr>
                     </thead>
                     <tbody id="participants">
@@ -40,19 +40,19 @@
                         @foreach ($alertes as $alerte)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ GoogleTranslate::trans( $alerte->nom, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($alerte->prenom, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($alerte->email, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($alerte->contact, app()->getLocale()) }}</td>
+                            <td>{{  $alerte->nom }}</td>
+                            <td>{{ $alerte->prenom }}</td>
+                            <td>{{ $alerte->email }}</td>
+                            <td>{{ $alerte->contact }}</td>
 
                             <td>
-                                <a class="btn btn-primary" href="{{ route('alert.show',$alerte->id)}}" ><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-primary" href="{{ route('alert.show',$alerte->id)}}"><i class="fa fa-eye"></i></a>
                             </td>
 
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucune alerte", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">Aucune alerte</td>
                         @endif
 
                     <tbody>

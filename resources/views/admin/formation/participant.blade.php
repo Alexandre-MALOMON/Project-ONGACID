@@ -4,7 +4,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-    {{ GoogleTranslate::trans(Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success') }}
 </div>
 @endif
 
@@ -13,7 +13,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div style="display: flex;justify-content:space-between;">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans($formation->title, app()->getLocale()) }}</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ $formation->title }}</h6>
                 @if ($formation->type ==1 )
                 <p class="m-0 font-weight-bold text-primary">TOTAL : {{$participants->sum('montant')}} FCFA</p>
 
@@ -30,13 +30,13 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("Transaction ID", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Prénom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("contact", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}</th>
+                            <th>{{ Transaction ID }}</th>
+                            <th>{{ Nom }}</th>
+                            <th>{{ Prénom }}</th>
+                            <th>{{ contact }}</th>
+                            <th>{{ E-mail }}</th>
                             <!--  @if ($formation->type == 1)
-                            <th width="280px">{{ GoogleTranslate::trans("Action", app()->getLocale()) }}</th>
+                            <th width="280px">{{ Action }}</th>
                             @endif -->
                         </tr>
                     </thead>
@@ -45,11 +45,11 @@
                         @foreach ($participants as $participant)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ GoogleTranslate::trans($participant->transaction_id, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($participant->nom, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($participant->prenom, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($participant->contact, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($participant->email, app()->getLocale()) }}</td>
+                            <td>{{ $participant->transaction_id }}</td>
+                            <td>{{ $participant->nom }}</td>
+                            <td>{{ $participant->prenom }}</td>
+                            <td>{{ $participant->contact }}</td>
+                            <td>{{ $participant->email }}</td>
                             <!--  @if ($formation->type == 1)
                             <td>
 
@@ -66,7 +66,7 @@
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucun participant", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">{{ Aucun participant }}</td>
                         @endif
 
                     <tbody>

@@ -6,37 +6,37 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Méssage", app()->getLocale()) }} </h2>
+                    <h2>Méssage </h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($message->name, app()->getLocale()) }}
+                    <strong>Nom:</strong>
+                    {{ $message->name }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($message->email, app()->getLocale()) }}
+                    <strong>E-mail:</strong>
+                    {{ $message->email }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Méssage", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($message->message, app()->getLocale()) }}
+                    <strong>Méssage:</strong>
+                    {{ $message->message }}
                 </div>
             </div>
         </div>
 
 
-        <button type="submit" class="btn btn-primary"><a href="mailto:{{$message->email}}">{{ GoogleTranslate::trans("Repondre", app()->getLocale()) }}</a></button>
+        <button type="submit" class="btn btn-primary"><a href="mailto:{{$message->email}}">Repondre</a></button>
 
     </div>
 </div>

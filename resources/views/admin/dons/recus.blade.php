@@ -3,7 +3,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-    {{ GoogleTranslate::trans( Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success') }}
 </div>
 @endif
 
@@ -11,7 +11,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("Don", app()->getLocale()) }}</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Don</h6>
 
         </div>
 
@@ -24,13 +24,13 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("Transaction ID", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans( "Type de don", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Nom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Prénom", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Contact", app()->getLocale()) }}</th>
-                            <th>{{ GoogleTranslate::trans("Montant", app()->getLocale()) }}</th>
+                            <th>Transaction ID</th>
+                            <th>Type de don</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>E-mail</th>
+                            <th>Contact</th>
+                            <th>Montant</th>
                         </tr>
                     </thead>
                     <tbody id="participants">
@@ -38,18 +38,18 @@
                         @foreach ($dons as $don)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ GoogleTranslate::trans( $don->transaction_id, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans( $don->don->name, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans( $don->lastname, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($don->firstname, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($don->email, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($don->contact, app()->getLocale()) }}</td>
-                            <td>{{ GoogleTranslate::trans($don->montant, app()->getLocale()) }} Fcfa</td>
+                            <td>{{ $don->transaction_id }}</td>
+                            <td>{{ $don->don->name }}</td>
+                            <td>{{ $don->lastname }}</td>
+                            <td>{{ $don->firstname }}</td>
+                            <td>{{ $don->email }}</td>
+                            <td>{{ $don->contact }}</td>
+                            <td>{{ $don->montant }} Fcfa</td>
 
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucun don", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">Aucun don</td>
                         @endif
 
                     <tbody>

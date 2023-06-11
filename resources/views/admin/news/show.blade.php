@@ -6,30 +6,30 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Détaille de la publication" , app()->getLocale()) }} </h2>
+                    <h2>Détaille de la publication </h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($new->title, app()->getLocale()) }}
+                    <strong>Titre:</strong>
+                    {{ $new->title }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Catégorie", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($new->pub->name, app()->getLocale()) }}
+                    <strong>Catégorie:</strong>
+                    {{ $new->pub->name }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Photo", app()->getLocale()) }}:</strong>
+                    <strong>Photo:</strong>
                     <td><img src="{{ $new->photo}}" alt="" height="300" width="300"></td>
                 </div>
             </div>
@@ -38,8 +38,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Description", app()->getLocale()) }}:</strong>
-                   {!! GoogleTranslate::trans($new->description, app()->getLocale()) !!}
+                    <strong>Description:</strong>
+                    {!! $new->description !!}
                 </div>
             </div>
         </div>

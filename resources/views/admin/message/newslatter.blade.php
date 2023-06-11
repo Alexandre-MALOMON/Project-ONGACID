@@ -4,7 +4,7 @@
 <!-- Success message -->
 @if (Session::has('success'))
 <div class="alert alert-success">
-    {{ GoogleTranslate::trans( Session::get('success'), app()->getLocale()) }}
+    {{ Session::get('success') }}
 </div>
 @endif
 
@@ -12,7 +12,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}</h6>
+            <h6 class="m-0 font-weight-bold text-primary">E-mail</h6>
 
         </div>
 
@@ -25,8 +25,8 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>{{ GoogleTranslate::trans("E-mail", app()->getLocale()) }}</th>
-                            <th width="280px">{{ GoogleTranslate::trans("Action", app()->getLocale()) }}</th>
+                            <th>E-mail</th>
+                            <th width="280px">Action</th>
                         </tr>
                     </thead>
                     <tbody id="participants">
@@ -36,7 +36,7 @@
                         @foreach ($news as $email)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ GoogleTranslate::trans( $email->email, app()->getLocale()) }}</td>
+                            <td>{{ $email->email }}</td>
                             <td>
                                 <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete{{$email->id}}"><i class="fa fa-trash"></i></a>
 
@@ -44,7 +44,7 @@
                         </tr>
                         @endforeach
                         @else
-                        <td colspan="13" style="text-align: center;">{{ GoogleTranslate::trans("Aucune addresse email", app()->getLocale()) }}</td>
+                        <td colspan="13" style="text-align: center;">Aucune addresse email</td>
                         @endif
 
                     <tbody>

@@ -6,30 +6,30 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>{{ GoogleTranslate::trans("Détaille de la formation", app()->getLocale()) }} <b></b>{{ GoogleTranslate::trans($formation->title, app()->getLocale()) }}</h2>
+                    <h2>Détaille de la formation <b></b>{{$formation->title }}</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Titre", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($formation->title, app()->getLocale()) }}
+                    <strong>Titre:</strong>
+                    {{$formation->title }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Catégorie", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($formation->type ==1 ? 'Payante' : 'Gratuite', app()->getLocale()) }}
+                    <strong>Catégorie:</strong>
+                    {{$formation->type ==1 ? 'Payante' : 'Gratuite' }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Début", app()->getLocale()) }}:</strong>
+                    <strong>Début:</strong>
                     {{ date('d/m/Y',strtotime($formation->debut))}}
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Fin", app()->getLocale()) }}:</strong>
+                    <strong>Fin:</strong>
                     {{ date('d/m/Y',strtotime($formation->fin))}}
                 </div>
             </div>
@@ -45,15 +45,15 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Lieu", app()->getLocale()) }}:</strong>
-                    {{ GoogleTranslate::trans($formation->lieu, app()->getLocale()) }}
+                    <strong>Lieu:</strong>
+                    {{$formation->lieu }}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Heure", app()->getLocale()) }}:</strong>
+                    <strong>Heure:</strong>
                     {{$formation->heure}}
                 </div>
             </div>
@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Prix", app()->getLocale()) }}:</strong>
+                    <strong>Prix:</strong>
                     {{$formation->prix}}
                 </div>
             </div>
@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Lien", app()->getLocale()) }}:</strong>
+                    <strong>Lien:</strong>
                      <a target="blank" href="{{$formation->lien}}"> {{$formation->lien}}</a>
                 </div>
             </div>
@@ -77,8 +77,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>{{ GoogleTranslate::trans("Description", app()->getLocale()) }}:</strong>
-                    {!! GoogleTranslate::trans($formation->description, app()->getLocale()) !!}
+                    <strong>Description:</strong>
+                    {!!$formation->description !!}
                 </div>
             </div>
         </div>
