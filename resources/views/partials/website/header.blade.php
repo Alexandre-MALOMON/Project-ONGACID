@@ -107,6 +107,12 @@
                     </a>
                 </li>
                 <li>
+                    <a class="dropdown-item" href="{{ route('recapitulatif')}}">
+                        <span><i class="fa-solid fa-book"></i></span>
+                        <p>Mon bibliothèque</p>
+                    </a>
+                </li>
+                <li>
                     <a class="dropdown-item" href="{{ route('parametre')}}">
                         <span><i class="fa-solid fa-gear"></i></span>
                         <p>Paramètre</p>
