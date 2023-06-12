@@ -29,7 +29,7 @@
         <div class="document_text">
             <h2>{{ $bibliotheque->title }}</h2>
             <h3>{{ $bibliotheque->auteur}}</h3>
-           <!--  <p>{!! GoogleTranslate::trans(substr($bibliotheque->description,0,200), app()->getLocale()) !!}...
+           <!--  <p>{!! substr($bibliotheque->description,0,200) !!}...
             </p> -->
 
             <div class="container_button_text">
@@ -49,21 +49,7 @@
                 @endphp
                 <p>{!!shareslink($lien)!!}</p>
             </div>
-           <!--  <div class="partager">
-                <p>{{ GoogleTranslate::trans("Partager sur", app()->getLocale()) }}</p>
-                <a href="#">
-                    <span><i class="fa-brands fa-facebook"></i></span>
-                </a>
-                <a href="#">
-                    <span><i class="fa-brands fa-twitter"></i></span>
-                </a>
-                <a href="#">
-                    <span><i class="fa-brands fa-linkedin"></i></span>
-                </a>
-                <a href="#">
-                    <span><i class="fa-brands fa-whatsapp"></i></span>
-                </a>
-            </div> -->
+           
         </div>
     </div>
     @endforeach

@@ -34,7 +34,7 @@
             @endphp
             <img src="{{ $photo[0]}}" alt="" height="200">
             <h3>{{ $activite->title }}</h3>
-             <!--  <p>{!!GoogleTranslate::trans(substr($activite->description,0,300), app()->getLocale())!!}...</p>
+             <!--  <p>{!!substr($activite->description,0,300)!!}...</p>
           <h4><span>Date :</span> 20 octobre au 19 novembre</h4> -->
             <h5><span>Lieu :</span> {{$activite->lieu}}</h5>
             <a href="{{ route('descriptionactivite',$activite->slug)}}">Lire</a>

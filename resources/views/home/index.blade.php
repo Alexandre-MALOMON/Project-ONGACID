@@ -178,20 +178,20 @@
             @csrf
             <div class="input_group">
                 <div class="input">
-                    <input name="name" type="text" placeholder="{{GoogleTranslate::trans('Nom & prénom', app()->getLocale())}}">
+                    <input name="name" type="text" placeholder="Nom & prénom">
                     @error('name')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="input">
-                    <input name="email" type="email" placeholder="{{GoogleTranslate::trans('Email', app()->getLocale())}}">
+                    <input name="email" type="email" placeholder="Email">
                     @error('email')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
 
             </div>
-            <textarea name="message" cols="30" rows="10" maxlength="50" placeholder="{{GoogleTranslate::trans('Votre message', app()->getLocale())}}"></textarea>
+            <textarea name="message" cols="30" rows="10" maxlength="50" placeholder="Votre message"></textarea>
             @error('message')
             <span class="text-danger">{{ ($message) }}</span>
             @enderror <button>Envoyer</button>

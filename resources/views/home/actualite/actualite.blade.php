@@ -31,7 +31,7 @@
             <div class="text_actualite">
                 <h2>{{ $poste->title }}
                 </h2>
-                <!-- <p>{!! GoogleTranslate::trans(substr($poste->description,0,200), app()->getLocale()) !!}...</p>-->
+                <!-- <p>{!! substr($poste->description,0,200) !!}...</p>-->
                 <div class="link_actualite">
                     <a href="{{ route('descriptionactualite', $poste->slug)}}">Lire</a>
                 </div>

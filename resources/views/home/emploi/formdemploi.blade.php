@@ -66,7 +66,7 @@
             @enderror
         </div>
         <div class="input_alert">
-            <label for="">{{ Diplome }} <span style="color: red;">*</span></label>
+            <label for="">Diplome  <span style="color: red;">*</span></label>
             <input type="file" name="diplome[]" multiple="multiple"><br>
             @error('diplome')
             <span class="text-danger">{{ $message }}</span>

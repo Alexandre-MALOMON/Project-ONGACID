@@ -32,21 +32,21 @@
         </div>
         <div class="input_alert">
             <label for="">Numéro de téléphone <span style="color: red;">*</span></label>
-            <input type="text" name="contact" placeholder="{{ GoogleTranslate::trans('Numéro de téléphone', app()->getLocale()) }}"><br>
+            <input type="text" name="contact" placeholder="Numéro de téléphone"><br>
             @error('contact')
             <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="input_alert">
             <label for="">Pays<span style="color: red;">*</span></label>
-            <input type="text" name="pays" placeholder="{{ GoogleTranslate::trans('Pays', app()->getLocale()) }}"><br>
+            <input type="text" name="pays" placeholder="Pays"><br>
             @error('pays')
             <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="input_alert">
             <label for="">Ville de résidence<span style="color: red;">*</span></label>
-            <input type="text" name="ville" placeholder="{{ GoogleTranslate::trans('Ville de résidence', app()->getLocale()) }}"><br>
+            <input type="text" name="ville" placeholder="Ville de résidence"><br>
             @error('ville')
             <span class="text-danger">{{ $message }}</span>
             @enderror

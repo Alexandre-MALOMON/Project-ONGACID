@@ -41,7 +41,7 @@
             @csrf
             <h2>Abonnez-vous à notre newletter</h2>
             <div class="form_contact_input">
-                <input name="email" type="email" placeholder="{{GoogleTranslate::trans('Email', app()->getLocale())}}"><br>
+                <input name="email" type="email" placeholder="Email"><br>
                 @error('email')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror

@@ -35,7 +35,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                     @foreach (categotyActivity() as $categotyAct)
-                    <li><a class="dropdown-item" href="{{ route('activite')}}?activite={{Crypt::encrypt($categotyAct->id)}}"> {{GoogleTranslate::trans( $categotyAct->name , app()->getLocale())}}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('activite')}}?activite={{Crypt::encrypt($categotyAct->id)}}"> {{$categotyAct->name }}</a></li>
                     @endforeach
                 </ul>
             </li>
@@ -68,7 +68,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     @foreach (categotypost() as $new)
-                    <li><a class="dropdown-item" href="{{ route('actualite')}}?actualite={{Crypt::encrypt($new->id)}}">{{GoogleTranslate::trans($new->name, app()->getLocale())}}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('actualite')}}?actualite={{Crypt::encrypt($new->id)}}">{{$new->name}}</a></li>
                     @endforeach
                 </ul>
             </li>

@@ -39,7 +39,7 @@
                 <div class="text">
                     <p><strong>{{taille_fichier($bibliotheque->livre)}} </strong></p>
                     <p><strong>62</strong>LECTURES</p>
-                    <p><strong>{{ $bibliotheque->telechargement ? $bibliotheque->telechargement : 0}} </strong>{{ GoogleTranslate::trans(" TELECHARGEMENTS", app()->getLocale()) }} </p>
+                    <p><strong>{{ $bibliotheque->telechargement ? $bibliotheque->telechargement : 0}} </strong> TELECHARGEMENTS</p>
                 </div>
             </div>
             <div class="social-btn-sp">

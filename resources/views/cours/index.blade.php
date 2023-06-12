@@ -11,7 +11,7 @@
                 <option value="{{$categorie->id}}">{{ $categorie->name }}</option>
                 @endforeach
             </select>
-            <button>{{ Rechercher }}</button>
+            <button> Rechercher </button>
 
         </form>
     </div>
@@ -22,7 +22,7 @@
             <div class="formation_cards_element">
                 <img src="{{$course->photo }}" alt="" class="">
                 <h2>{{ $course->title_cours }}</h2>
-                <!--  <p>{!! GoogleTranslate::trans(substr($course->description_cours,0,2000), app()->getLocale()) !!}... </p> -->
+                <!--  <p>{!! substr($course->description_cours,0,2000) !!}... </p> -->
                 <div class="cour_info">
                     <div class="cour_items">
                         <span><i class="fa-regular fa-clock"></i></span>

@@ -33,9 +33,9 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
     <div class="emploi_card">
         <div class="emploi_text">
             <h3>{{ Carbon::parse($volontariat->start)->Format('d F Y') . ' au' }} {{ Carbon::parse($volontariat->end)->Format('d F Y') }}</h3>
-            <h2>{{ GoogleTranslate::trans($volontariat->name, app()->getLocale()) }}
+            <h2>{{ $volontariat->name }}
                 <h2>
-                   <!--  <p>{!! GoogleTranslate::trans(substr($volontariat->description,0,200), app()->getLocale()) !!}...
+                   <!--  <p>{!! substr($volontariat->description,0,200) !!}...
                     <p> -->
         </div>
         <div class="emploi_action">

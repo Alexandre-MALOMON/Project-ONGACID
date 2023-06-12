@@ -15,7 +15,7 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
         <div class="tarifs">
             <div class="tarifs_text">
                 <h3>{{ Carbon::parse($agenda->debut)->Format('d F Y') . ' au' }} {{ Carbon::parse($agenda->fin)->Format('d F Y') }}</h3>
-                <h2>{{ GoogleTranslate::trans($agenda->title, app()->getLocale()) }}
+                <h2>{{ $agenda->title }}
                     <h2>
             </div>
             <div class="tarifs_horaire">
