@@ -107,9 +107,9 @@
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="{{ route('recapitulatif')}}">
+                    <a class="dropdown-item" href="{{ route('bibliouser')}}">
                         <span><i class="fa-solid fa-book"></i></span>
-                        <p>Mon bibliothèque</p>
+                        <p>Ma bibliothèque</p>
                     </a>
                 </li>
                 <li>

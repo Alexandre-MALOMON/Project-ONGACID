@@ -16,6 +16,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "pdfobject": "^2.2.12",
         "smartwizard": "^6.0.6"
     }
 }

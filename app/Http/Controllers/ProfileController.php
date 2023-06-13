@@ -16,6 +16,7 @@ class ProfileController extends Controller
     public function dashboard()
     {
         $courCompletes = CoursComplete::where(['user_id' => Auth::user()->id])->paginate(10);
+        //dd($courCompletes);
         $episodes = Episode::all();
         $completions = Completion::all();
         return view('profile.dashboard', compact('courCompletes', 'episodes', 'completions'));

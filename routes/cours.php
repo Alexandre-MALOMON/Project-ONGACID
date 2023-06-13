@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BiblioUserController;
 use App\Http\Controllers\CourController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EpisodeController;
@@ -19,6 +20,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::put('update_profil/{user}',[UserController::class, 'updateProfil'])->name('updateProfil');
     Route::post('completide/{episode:slug}',[EpisodeController::class, 'completide'])->name('completide');
     Route::get('/courses_show/{cour:slug}', [CourseController::class, 'show'])->name('courses.show');
+    //biblioUser
+    Route::get('bibliotheques', [BiblioUserController::class,'index'])->name('bibliouser');
+   Route::get('bibliotheques/{book:slug}', [BiblioUserController::class,'showBook'])->name('showboooks');
 });
 Route::post('coursearch',[CourseController::class,'seachCours'])->name('seachCours');
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
